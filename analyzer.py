@@ -11,7 +11,7 @@ try:
 except ImportError:
     # Fallback if the plotting dependency or file is missing
     def plot_bar_chart(*args, **kwargs):
-        warnings.warn("plot_bar_chart is not available. Check aijobstrends/visualization/plotter.py")
+        warnings.warn("plot_bar_chart is not available. Check aijobstrends/plotter.py")
 
 
 class AITrendsAnalyzer:
@@ -208,4 +208,5 @@ class AITrendsAnalyzer:
         for rank, (skill, count) in enumerate(top_skills.items(), 1):
             report += f"{rank}. **{skill.capitalize()}**: {count} vacancies.\n"
         
+
         return report
