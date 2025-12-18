@@ -9,7 +9,6 @@ from aijobstrends.visualization.plotter import plot_bar_chart
 try:
     from aijobstrends.visualization.plotter import plot_bar_chart 
 except ImportError:
-    # Fallback if the plotting dependency or file is missing
     def plot_bar_chart(*args, **kwargs):
         warnings.warn("plot_bar_chart is not available. Check aijobstrends/plotter.py")
 
@@ -78,7 +77,6 @@ class AITrendsAnalyzer:
         df = pd.read_csv(self.file_path)
         
         if 'Unnamed: 0' in df.columns or df.columns[0] == 'job_id':
-            # Remove the index column to avoid conflicts with 'job_title'
             df.drop(columns=[df.columns[0]], inplace=True, errors='ignore')
 
         ORIGINAL_SALARY_COL = 'salary_range_usd'
@@ -210,3 +208,4 @@ class AITrendsAnalyzer:
         
 
         return report
+
