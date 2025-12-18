@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aijobstrends"
+version = "0.1.0"
+authors = [
+  { name="Ivanna Hasyn", email="gasinivanna@gmail.com" },
+  { name="Dariia Hladiy", email="dariia.hladii.sa.2024@lpnu.ua" },
+  { name="Yuliana Shramko", email="yuliana.shramko.sa.2024@lpnu.ua" },
+]
+description = "A Python package for analyzing AI job market trends"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "pandas",
+    "matplotlib",
+    "numpy",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["aijobstrends*"]
